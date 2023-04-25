@@ -15,5 +15,23 @@ def all_melons():
       '''return all melons for purchase'''
       melons = get_all()
       return render_template('all_melons.html', melons=melons)
+
+@app.route('/cart')
+def shopping_cart():
+      '''Gets all the melons that were added to the cart.csv'''
+      return render_template('cart.html')
+
+@app.route('/melon/<melon_id>')
+def single_melon(melon_id):
+      '''Get's a single melon the user selects, also provides a button to add the melon to the cart'''
+      return render_template('melon_details.html')
+
+@app.route('/add_to_cart/<melon_id>')
+def add_to_cart(melon_id):
+      '''Adds a melon to the cart'''
+      return f'{melon_id} added to the cart!'
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
