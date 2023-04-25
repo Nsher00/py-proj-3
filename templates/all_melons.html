@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% for melon in melons %}
+        <div>
+            {{melon.common_name}}
+        </div>
+    {% endfor %}
+{% endblock %}
