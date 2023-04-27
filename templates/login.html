@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>Please login</h2>
+
+<form class="w-50" action="{{url_for('login')}}", method="POST">
+    {{ form.csrf_token() }}
+    <br>
+    <div>{{ form.username.label }}: {{form.username(class='form-control')}}</div>
+    <br>
+    <div>{{ form.password.label }}: {{form.password(class='form-control')}}</div>
+    <br>
+    <button class="btn btn-primary" type="submit">Sign in</button>
+</form>
+
+{% endblock %}
